@@ -48,7 +48,10 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-Deployment follows your usual process (for example **`mkdocs gh-deploy`** or the GitHub Actions workflow on this repository).
+Deployment options:
+
+- **GitHub Pages** — push to `main` / `master` triggers `.github/workflows/docs.yml` (`mkdocs gh-deploy`).
+- **Render** — see the root **`render.yaml`** blueprint and the **Host on Render** section in **`README.md`** (production host: `https://blockchain-sec.tekvo.io/`; keep `site_url` in `mkdocs.yml` aligned with the hostname you serve).
 
 ## Legal disclaimer (site-wide)
 

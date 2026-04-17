@@ -1,0 +1,22 @@
+# Render Blueprint — static MkDocs site
+# https://render.com/docs/yaml-spec
+#
+# Custom host: https://blockchain-sec.tekvo.io (DNS: CNAME blockchain-sec → your-service.onrender.com)
+
+services:
+  - type: web
+    name: tekvo-blockchain-security-docs
+    runtime: static
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: pip install --no-cache-dir -r requirements.txt && mkdocs build --strict
+    staticPublishPath: site
+    # Add blockchain-sec.tekvo.io under Settings → Custom domains after deploy (see README).
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff

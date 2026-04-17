@@ -1,6 +1,9 @@
 site_name: Blockchain & Smart Contract Security
+site_url: https://blockchain-sec.tekvo.io/
 site_description: Curated notes on blockchain security, smart contract auditing, and token due diligence.
 copyright: 'Guide by <a href="https://www.tekvo.io" target="_blank" rel="noopener noreferrer">Tekvo.io</a>'
+repo_url: https://github.com/tekvo/Blockchain-Crypto-Auditing-Security
+repo_name: GitHub
 
 theme:
   name: material
