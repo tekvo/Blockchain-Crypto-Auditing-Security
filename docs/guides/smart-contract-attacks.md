@@ -1,6 +1,6 @@
 # Smart contract attacks and vulnerability classes
 
-Reference list of common **Solidity / EVM** pitfalls, with links to official docs, research, and write-ups. Pair with [003 Blockchain Best Practices](./003%20Blockchain%20Best%20Practices.md) for defensive design.
+Reference list of common **Solidity / EVM** pitfalls, with links to official docs, research, and write-ups. Pair with [Blockchain best practices](blockchain-best-practices.md) for defensive design.
 
 ## Solidity security pitfalls, considerations and recommendations
 https://docs.soliditylang.org/en/v0.8.0/security-considerations.html

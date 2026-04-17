@@ -21,7 +21,7 @@ Solid documentation is the baseline for any review.
 
 ## 3. Bug and abuse-case testing
 
-- Harmful or unexpected transactions: ordering dependencies, stack limits, arithmetic issues, and related classes in [001 Type of Blockchain Attacks](./001%20Type%20of%20Blockchain%20Attacks.md) and [002 Smart contract attacks](./002%20Smart%20contract%20attacks.md)  
+- Harmful or unexpected transactions: ordering dependencies, stack limits, arithmetic issues, and related classes in [Types of blockchain attacks](blockchain-attacks.md) and [Smart contract attacks](smart-contract-attacks.md)  
 - Token minting: supply caps, roles, timelocks, and upgrade paths  
 - If **pause** exists: model rug-pull and liveness scenarios (who can pause, for how long, and what user funds are affected)  
 - **Delegatecall**, proxies, and third-party calls: storage layout, implementation upgrades, and trust boundaries  

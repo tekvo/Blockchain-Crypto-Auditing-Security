@@ -16,4 +16,4 @@ Treat tool output as **hints**. False positives and false negatives happen; veri
 - Check **liquidity** lock duration and which address controls the LP tokens  
 - Compare **socials** and **official deployments** to avoid impersonation tokens  
 
-Cross-link: [007 Roadmap for Smart Contract Audit](./007%20Roadmap%20for%20Smart%20Contract%20Audit.md) for patterns auditors often flag.
+Cross-link: [Roadmap for auditing smart contracts](audit-roadmap.md) for patterns auditors often flag.

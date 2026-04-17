@@ -1,0 +1,53 @@
+site_name: Blockchain & Smart Contract Security
+site_description: Curated notes on blockchain security, smart contract auditing, and token due diligence.
+copyright: 'Guide by <a href="https://www.tekvo.io" target="_blank" rel="noopener noreferrer">Tekvo.io</a>'
+
+theme:
+  name: material
+  logo: assets/logo.webp
+  favicon: assets/favicon-16x16.png
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Guides:
+      - Types of blockchain attacks: guides/blockchain-attacks.md
+      - Smart contract attacks: guides/smart-contract-attacks.md
+      - Blockchain best practices: guides/blockchain-best-practices.md
+      - Audit reports: guides/audit-reports.md
+      - Web3 security tools: guides/web3-security-tools.md
+      - EVM low-level coding: guides/evm-low-level-coding.md
+      - Audit roadmap: guides/audit-roadmap.md
+      - Token due diligence: guides/token-due-diligence.md
+      - Secureum: guides/secureum.md
+  - Code samples: code-samples.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true

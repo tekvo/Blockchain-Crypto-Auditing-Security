@@ -22,7 +22,7 @@ This note groups common attack surfaces into **network**, **wallet**, **smart co
     - Attacks on cold wallets
     - Attacks on hot wallets
     
-## 3. [Smart contract attacks](./002%20Smart%20contract%20attacks.md)
+## 3. [Smart contract attacks](smart-contract-attacks.md)
     - Vulnerabilities in contract source code
     - Vulnerabilities in virtual machines
         1. Immutable defects
