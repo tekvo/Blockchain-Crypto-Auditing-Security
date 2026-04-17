@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{# Open Graph, Twitter, and WebSite JSON-LD — complements Material's site_meta (description, canonical). #}
+
+{% block extrahead %}
+  {{ super() }}
+
+  {% if page.meta and page.meta.title %}
+    {% set _seo_title = page.meta.title ~ " - " ~ config.site_name %}
+  {% elif page.title and not page.is_homepage %}
+    {% set _seo_title = page.title | striptags ~ " - " ~ config.site_name %}
+  {% else %}
+    {% set _seo_title = config.site_name %}
+  {% endif %}
+
+  {% if page.meta and page.meta.description %}
+    {% set _seo_desc = page.meta.description %}
+  {% elif config.site_description %}
+    {% set _seo_desc = config.site_description %}
+  {% else %}
+    {% set _seo_desc = "" %}
+  {% endif %}
+
+  <meta property="og:title" content="{{ _seo_title | e }}">
+  {% if _seo_desc %}
+  <meta property="og:description" content="{{ _seo_desc | e }}">
+  {% endif %}
+  {% if page.canonical_url %}
+  <meta property="og:url" content="{{ page.canonical_url }}">
+  {% endif %}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ config.site_name | e }}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="{{ config.site_url }}assets/logo.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ _seo_title | e }}">
+  {% if _seo_desc %}
+  <meta name="twitter:description" content="{{ _seo_desc | e }}">
+  {% endif %}
+  <meta name="twitter:image" content="{{ config.site_url }}assets/logo.webp">
+
+  {% if page.is_homepage %}
+  <script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": config.site_name,
+  "url": config.site_url | string | trim,
+  "description": config.site_description,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tekvo.io",
+    "url": "https://www.tekvo.io"
+  }
+} | tojson }}
+  </script>
+  {% endif %}
+{% endblock %}

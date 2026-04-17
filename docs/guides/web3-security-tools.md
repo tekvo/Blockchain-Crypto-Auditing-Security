@@ -1,3 +1,8 @@
+---
+title: Web3 security tools
+description: Smart contract security tooling — Slither, fuzzing, formal verification, on-chain investigation, and bug frameworks — Tekvo.
+---
+
 # Web3 security tools, platforms, and frameworks
 
 Collections and references for **static analysis**, **testing and fuzzing**, **formal methods**, **monitoring**, **on-chain investigation**, and **bug taxonomies**. Tools complement manual review; they do not replace it.

@@ -1,3 +1,8 @@
+---
+title: Token due diligence
+description: Token screening on EVM chains — liquidity, roles, taxes, MEV, and bridge risk before investing — educational, not financial advice — Tekvo.
+---
+
 # Checks before investing in crypto tokens
 
 Quick screening ideas for tokens on **BSC**, **Ethereum**, **Polygon**, **Fantom**, and other **EVM-compatible** chains. This is **not** financial advice; use it as a starting checklist and do your own research.

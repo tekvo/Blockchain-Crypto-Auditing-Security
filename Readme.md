@@ -17,6 +17,8 @@ mkdocs serve
 
 Then open [http://127.0.0.1:8000/](http://127.0.0.1:8000/). Click items in the nav or in the tables on the home page to move between documents.
 
+**SEO:** Per-page `description` in front matter, Open Graph / Twitter meta (`overrides/main.html`), `sitemap.xml` (post-build hook), and `docs/robots.txt`. See [Contributing — SEO](./docs/contributing.md#seo-search-and-sharing).
+
 ### Publish to GitHub Pages
 
 ```bash
@@ -58,6 +60,8 @@ This repo includes a **[Render Blueprint](https://render.com/docs/infrastructure
 | [`docs/industry/`](./docs/industry/) | Industry verticals + **catalog IDs** for future use case mapping; regenerate from [`scripts/generate_industry_pages.py`](./scripts/generate_industry_pages.py) where applicable |
 | [`codes/`](./codes/) | Solidity interfaces and educational examples |
 | [`render.yaml`](./render.yaml) | Render static-site blueprint (optional; use dashboard instead if you prefer) |
+| [`mkdocs_hooks.py`](./mkdocs_hooks.py) | Post-build `sitemap.xml` generation |
+| [`overrides/main.html`](./overrides/main.html) | Open Graph, Twitter Card, and WebSite JSON-LD |
 
 ## Disclaimer
 

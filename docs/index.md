@@ -1,3 +1,8 @@
+---
+title: Home
+description: Curated blockchain and smart contract security guides — attacks, audits, EVM, token due diligence, Solidity library, and industry verticals by Tekvo.
+---
+
 # Blockchain, crypto, and smart contract security
 
 [Guide by Tekvo.io](https://www.tekvo.io)

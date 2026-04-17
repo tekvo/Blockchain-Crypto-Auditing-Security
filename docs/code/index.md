@@ -1,3 +1,8 @@
+---
+title: Solidity code library
+description: Solidity code library with copyable examples, interfaces, and utilities from the repository — security-focused notes — Tekvo.
+---
+
 # Solidity code library (`codes/`)
 
 Every Solidity file under the repository’s **`codes/`** tree is documented below with a short **what it is / why it matters** note and the **full source** in a copyable block (use the **clipboard** icon on hover).

@@ -1,3 +1,8 @@
+---
+title: Types of blockchain attacks
+description: Attack surfaces across networks, wallets, smart contracts, MEV, bridges, and consensus — threat-model outline with mitigations — Tekvo.
+---
+
 # Types of blockchain attacks
 
 This page maps common attack surfaces across the **network**, **wallet**, **smart contract**, **transaction layer**, **mining / consensus**, and **cross-chain** stack. It is organized as a **threat-model outline**: each class ties to **who controls the failure point**, **what invariant breaks**, and **what evidence typically appears on-chain or in infrastructure**. Network- and wallet-layer rows align with **operational controls** (monitoring, key ceremony, incident playbooks) as well as technical mitigations. For Solidity-specific classes and references, see [Smart contract attacks](smart-contract-attacks.md).

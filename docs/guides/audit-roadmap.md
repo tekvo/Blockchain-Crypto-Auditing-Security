@@ -1,3 +1,8 @@
+---
+title: Audit roadmap
+description: Internal smart contract audit checklist — upgrades, oracles, tokens, pause, and partner diligence before external audit — Tekvo.
+---
+
 # Roadmap for auditing smart contracts (Tekvo / internal review)
 
 A practical checklist for an **initial internal security pass** before engaging a third-party auditor. Adapt items to your protocol’s threat model and scope.

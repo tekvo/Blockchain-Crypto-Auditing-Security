@@ -1,3 +1,8 @@
+---
+title: Solidity interfaces and security modules
+description: Solidity interfaces and security mixins — IERC20, IAccessControl, burn and pause patterns with copyable source — Tekvo.
+---
+
 # Interfaces & security modules (`codes/interfaces/`)
 
 **Interfaces** define external APIs for ERC20, access control, introspection, and **security mixins** (burn, pause) used by the examples. Full source in each block—copy with the header **clipboard** control.

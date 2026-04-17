@@ -1,3 +1,8 @@
+---
+title: Solidity examples
+description: Example Solidity contracts — ERC20 presets, access control patterns, and educational snippets with full source — Tekvo.
+---
+
 # Example contracts (`codes/Examples/`)
 
 Educational **concrete contracts** built from the interfaces and utils in this repo—mostly OpenZeppelin v4.5–style patterns. Use the copy control on each block to grab the full file.

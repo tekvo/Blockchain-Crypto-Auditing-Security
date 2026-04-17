@@ -1,3 +1,8 @@
+---
+title: Solidity utils
+description: Solidity helper libraries — SafeMath-style patterns, counters, and utilities used by the example contracts — Tekvo.
+---
+
 # Utils (`codes/utils/`)
 
 Shared **helpers and libraries** used by the example contracts. Each entry is the full file—copy from the block as needed.

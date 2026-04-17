@@ -1,3 +1,8 @@
+---
+title: EVM low-level coding
+description: EVM bytecode, opcodes, gas, delegatecall, and transient storage for security-minded review — Tekvo.
+---
+
 # Working with the EVM (low-level view)
 
 Useful material when you need to reason about **bytecode**, **execution traces**, or **gas**, not only Solidity source.

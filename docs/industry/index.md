@@ -1,3 +1,8 @@
+---
+title: Industry solutions
+description: Industry catalog for blockchain and DLT security — Web3, finance, supply chain, public sector, and stable catalog IDs for use cases — Tekvo.
+---
+
 # Industry solutions
 
 Tekvo helps organizations that **already use blockchain** or are **evaluating DLT** for pilots and production: from smart contracts and custody to multi-party networks, oracles, and upgrades.

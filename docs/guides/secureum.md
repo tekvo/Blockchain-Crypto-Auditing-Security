@@ -1,3 +1,8 @@
+---
+title: Secureum
+description: Secureum and related Web3 security reading lists — supplementary resources for auditors and builders — Tekvo.
+---
+
 # Secureum
 
 Secureum publishes structured security perspectives and deep dives. These two entries are a compact starting set.

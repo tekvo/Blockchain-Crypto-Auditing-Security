@@ -1,3 +1,8 @@
+---
+title: Smart contract attacks and vulnerability classes
+description: Solidity and EVM vulnerability classes — reentrancy, oracles, delegatecall, gas — with links to official docs and research — Tekvo.
+---
+
 # Smart contract attacks and vulnerability classes
 
 Reference list of common **Solidity / EVM** pitfalls, with links to official docs, research, and write-ups. **[Blockchain best practices](blockchain-best-practices.md)** collects defensive design patterns alongside this reference.

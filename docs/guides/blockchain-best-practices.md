@@ -1,3 +1,8 @@
+---
+title: Blockchain and smart contract best practices
+description: Secure design and operations — OWASP Smart Contract Top 10, ConsenSys patterns, SDLC checkpoints for Ethereum contracts — Tekvo.
+---
+
 # Blockchain and smart contract best practices
 
 This page ties together **design-time**, **implementation-time**, and **operational** practices. **[Smart contract attacks](smart-contract-attacks.md)** lists vulnerability classes; **[Web3 security tools](web3-security-tools.md)** maps automation and formal tooling.

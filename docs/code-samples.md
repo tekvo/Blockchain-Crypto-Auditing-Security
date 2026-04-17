@@ -1,3 +1,8 @@
+---
+title: Code samples
+description: Guided Solidity tour — Context, Pausable, and AccessControl patterns with explanations and copyable snippets — Tekvo.
+---
+
 # Code samples
 
 Solidity in this repository lives under **`codes/`** at the project root. For **every** `.sol` file with explanation and full copyable source, use the **[Code library](code/index.md)** (Examples, Interfaces & security, Utils). This page is a **shorter guided tour** of three important modules only.

@@ -1,3 +1,8 @@
+---
+title: Audit reports
+description: Reading public smart contract audit reports — scope, severity, methodology, and remediation tracking — Tekvo.
+---
+
 # Audit reports
 
 Public audit reports help you learn how firms structure findings, severity, and remediation guidance.

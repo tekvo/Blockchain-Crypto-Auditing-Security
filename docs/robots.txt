@@ -1,0 +1,5 @@
+# https://blockchain-sec.tekvo.io/
+User-agent: *
+Allow: /
+
+Sitemap: https://blockchain-sec.tekvo.io/sitemap.xml
