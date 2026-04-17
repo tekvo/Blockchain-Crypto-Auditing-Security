@@ -17,6 +17,8 @@ Solid documentation is the baseline for any review.
 ## 2. Automated and static analysis
 
 - Run suitable auditing / analysis tools (example workflow): [bscheck](https://bscheck.eu/)  
+- Add **CI static analysis** where practical (e.g. [Slither](https://github.com/crytic/slither), linters); see [Web3 security tools](web3-security-tools.md) for a wider tool map  
+- **Property / invariant tests** and fork tests for oracle- and AMM-heavy code ([Foundry](https://book.getfoundry.sh/forge/invariant-testing), [Echidna](https://github.com/crytic/echidna), [Medusa](https://github.com/crytic/medusa))  
 - Integrate findings with manual review; tools do not replace human judgment  
 
 ## 3. Bug and abuse-case testing

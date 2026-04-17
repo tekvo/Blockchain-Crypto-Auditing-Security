@@ -1,6 +1,10 @@
 # Smart contract attacks and vulnerability classes
 
-Reference list of common **Solidity / EVM** pitfalls, with links to official docs, research, and write-ups. Pair with [Blockchain best practices](blockchain-best-practices.md) for defensive design.
+Reference list of common **Solidity / EVM** pitfalls, with links to official docs, research, and write-ups. **[Blockchain best practices](blockchain-best-practices.md)** collects defensive design patterns alongside this reference.
+
+A **ranked, maintained taxonomy** aligned with recent incidents is the **[OWASP Smart Contract Top 10](https://owasp.org/www-project-smart-contract-top-10/)** and the live **[2026 entries](https://scs.owasp.org/sctop10/)** (access control, business logic, oracle manipulation, flash-loan chains, proxies, and related classes). This Tekvo page stays a **curated grab-bag of primary sources and deep notes** on specific classes (reentrancy, `delegatecall`, gas quirks, and academic papers).
+
+Many production exploits chain several issues—for example **oracle manipulation** or **rounding errors** amplified by a **flash loan** in one transaction. **End-to-end state** across external calls—not only single-function logic—carries most of the risk signal in review.
 
 ## Solidity security pitfalls, considerations and recommendations
 https://docs.soliditylang.org/en/v0.8.0/security-considerations.html

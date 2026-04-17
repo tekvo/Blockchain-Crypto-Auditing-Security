@@ -4,6 +4,7 @@ copyright: 'Guide by <a href="https://www.tekvo.io" target="_blank" rel="noopene
 
 theme:
   name: material
+  custom_dir: overrides
   logo: assets/logo.webp
   favicon: assets/favicon-16x16.png
   features:
@@ -17,21 +18,47 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: teal
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: teal
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
 
 nav:
   - Home: index.md
+  - Contributing: contributing.md
+  - Industry:
+      - Overview: industry/index.md
+      - "Digital native & protocols":
+          - "Web3, DeFi & protocol builders": industry/web3-blockchain-security.md
+      - "Financial services & markets":
+          - "Banking, payments & FinTech": industry/banking-payments-fintech.md
+          - "Capital markets & tokenization": industry/capital-markets-tokenization.md
+          - "Insurance": industry/insurance.md
+      - "Supply chain & physical economy":
+          - "Supply chain, logistics & trade": industry/supply-chain-logistics.md
+          - "Manufacturing, IoT & industrial": industry/manufacturing-iot-industrial.md
+          - "Agriculture & food systems": industry/agriculture-food.md
+          - "Energy, sustainability & commodities": industry/energy-sustainability-commodities.md
+      - "Public sector & regulated data":
+          - "Government & public sector": industry/government-public-sector.md
+          - "Healthcare & life sciences": industry/healthcare-life-sciences.md
+          - "Telecom, identity & consumer data": industry/telecom-identity.md
+      - "Consumer, media & built world":
+          - "Retail, loyalty & consumer brands": industry/retail-consumer-brands.md
+          - "Gaming, media & entertainment": industry/gaming-media-entertainment.md
+          - "Real estate, construction & prop-tech": industry/real-estate-construction.md
+          - "Transportation & mobility": industry/transportation-mobility.md
+      - "Knowledge & professional services":
+          - "Professional services, legal & IP": industry/professional-services-legal-ip.md
+          - "Education, research & credentials": industry/education-research-credentials.md
   - Guides:
       - Types of blockchain attacks: guides/blockchain-attacks.md
       - Smart contract attacks: guides/smart-contract-attacks.md
@@ -42,12 +69,32 @@ nav:
       - Audit roadmap: guides/audit-roadmap.md
       - Token due diligence: guides/token-due-diligence.md
       - Secureum: guides/secureum.md
-  - Code samples: code-samples.md
+  - Code library:
+      - Overview: code/index.md
+      - Examples: code/examples.md
+      - Interfaces & security: code/interfaces.md
+      - Utils: code/utils.md
+      - Guided walkthrough: code-samples.md
+
+extra_css:
+  - stylesheets/tekvo.css
 
 plugins:
   - search
 
 markdown_extensions:
+  - md_in_html
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.snippets:
+      check_paths: true
+      base_path:
+        - .
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - admonition
+  - pymdownx.details

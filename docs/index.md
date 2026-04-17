@@ -2,12 +2,13 @@
 
 [Guide by Tekvo.io](https://www.tekvo.io)
 
-Curated notes and references for **blockchain security**, **smart contract auditing**, and **due diligence** on tokens and protocols. Use the **Guides** section in the sidebar to open each topic on its own page.
+Curated notes and references for **blockchain security**, **smart contract auditing**, and **due diligence** on tokens and protocols. Use the **Guides** section in the sidebar to open each topic on its own page. The **[Types of blockchain attacks](guides/blockchain-attacks.md)** page now includes **cross-chain**, **MEV / ordering**, and **governance** surfaces alongside the classic network and wallet list; **[Blockchain best practices](guides/blockchain-best-practices.md)** links the **OWASP Smart Contract Top 10**, SDLC checkpoints, and operations guidance.
 
 ## Start here
 
 | Topic | Page |
 |--------|------|
+| Industry solutions (verticals + use-case catalog IDs) | [Industry overview](industry/index.md) |
 | Network, wallet, and verification-layer attacks | [Types of blockchain attacks](guides/blockchain-attacks.md) |
 | Smart contract vulnerability classes and references | [Smart contract attacks](guides/smart-contract-attacks.md) |
 | Secure development practices | [Blockchain best practices](guides/blockchain-best-practices.md) |
@@ -28,10 +29,12 @@ Curated notes and references for **blockchain security**, **smart contract audit
 6. **Token due diligence** and **Audit reports** — Token screening and how professional reports are structured.
 7. **Secureum** — Broader Web3 and Eth2 security reading.
 
-## Code samples
+## Solidity library (`codes/`)
 
-Solidity interfaces and small examples live in the **`codes/`** directory at the repository root. See [Code samples](code-samples.md) for how that folder is organized.
+Every file under **`codes/`** has a **short explanation and full copyable source** on the [Code library overview](code/index.md) (split across [Examples](code/examples.md), [Interfaces & security](code/interfaces.md), and [Utils](code/utils.md)). For a shorter guided tour, see [Guided walkthrough](code-samples.md).
 
 ## Disclaimer
 
 All information (tools, links, articles, text, images, and code) is provided **for educational purposes only**. It is compiled from public sources. You are solely responsible for how you use this material and for any decisions you make; the authors and contributors are not liable for your actions.
+
+Site editors and collaborators maintain extensions and tone conventions on the [Contributing](contributing.md) page.

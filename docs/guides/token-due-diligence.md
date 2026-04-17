@@ -16,4 +16,10 @@ Treat tool output as **hints**. False positives and false negatives happen; veri
 - Check **liquidity** lock duration and which address controls the LP tokens  
 - Compare **socials** and **official deployments** to avoid impersonation tokens  
 
-Cross-link: [Roadmap for auditing smart contracts](audit-roadmap.md) for patterns auditors often flag.
+### Wrapped, bridged, and “same ticker” risk
+
+- **Bridged assets** inherit the bridge’s trust model; depeg or bridge compromise can make the token worthless even if the ERC-20 code is fine. Prefer understanding **canonical vs wrapped** supply on each chain.  
+- **Permit / signature phishing**: attackers trick users into signing allowances for unrelated contracts. Treat unexpected signature prompts as high risk.  
+- **Trading / MEV**: thin pools and high default slippage increase **sandwich** and **bad fill** risk; this is not always a “contract bug” but affects realized value — see [transaction ordering and MEV](blockchain-attacks.md#tx-ordering-attacks) in the attacks guide.
+
+Cross-link: [Roadmap for auditing smart contracts](audit-roadmap.md) for patterns auditors often flag. For the full network and bridge map, see [Types of blockchain attacks](blockchain-attacks.md).

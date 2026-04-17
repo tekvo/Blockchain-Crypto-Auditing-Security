@@ -29,8 +29,10 @@ If you use the included GitHub Actions workflow, pushing to the default branch b
 
 | Path | Purpose |
 |------|---------|
-| [`docs/`](./docs/) | Site source: landing page, guides, code-samples page |
+| [`docs/`](./docs/) | Site source: landing page, guides, [code library](./docs/code/index.md), guided code page |
+| [`docs/contributing.md`](./docs/contributing.md) | Maintainer notes: tone, industry generator, snippets, builds |
 | [`docs/guides/`](./docs/guides/) | One markdown file per topic (former `001`–`012` notes) |
+| [`docs/industry/`](./docs/industry/) | Industry verticals + **catalog IDs** for future use case mapping; regenerate from [`scripts/generate_industry_pages.py`](./scripts/generate_industry_pages.py) where applicable |
 | [`codes/`](./codes/) | Solidity interfaces and educational examples |
 
 ## Disclaimer
