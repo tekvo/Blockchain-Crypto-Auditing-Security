@@ -1,42 +1,54 @@
-# Roadmap for Auditing Smart Contracts by Tekvo
+# Roadmap for auditing smart contracts (Tekvo / internal review)
 
-## Initial Internal Security Audit
- - ### Documentation : 
-   Document everything properly, because that is the starting point for auditing your code
-    - Business Requirements Documentation
-    - Techical Requirements Documents
-    - Logic Expected & Code written for it
-    - Test Cases ( Try to automate test cases ), Maintain a log of test cases executed
-    - Test Results from the test net
-    - Maintain versioning of each document to make sure that if any changes done in the requirements document or logic, then is your code also reflecting the same changes.
-    - Code should be done strictly as per the definition or logic defined in the requirements document
- - ### Test using Auding tools
-    -  https://bscheck.eu/
-    - 
-   ### Bug Testing
-    - Is there any harmful transaction in your contract? Transaction Ordering Dependency, Stack Size limits, Integer overflow etc.
-     [Refer - Type of attacks](https://github.com/Tekvology/Blockchain-Crypto-Auditing-Security/blob/main/001%20Type%20of%20Blockchain%20Attacks.md)
-    - Are you using a safe Token minting process?
-    - If contract is enabled for pause then make sure to test the rug pull scenerios? 
-    - Is there any delegate call, proxy contract, thirdparty function call done inside the contract?
-    - Is factory pattern implemented correctly? https://blog.logrocket.com/cloning-solidity-smart-contracts-factory-pattern/
-    - Contract should not contain a migrator code, in 1000's of cases it resulted in rugpull. https://rugdoc.io/education/migrator/
-    - Make sure that the renounce ownership function is implemented for the right reasons and correctly. https://eips.ethereum.org/EIPS/eip-173
-    - Solidity does not contain a emergency withdraw code
-    - The contract not used locktime function
-    - There is no Liquidity remove function
-    - Solidity does not contain a change strategies function
-    - Make sure that burn function is not suspicious
-    - Make sure that each function performs exactly the same action as expected from it.
-    - Perform input validation under byzantine threat model
-    - Test dependency on external contracts/libraries and oracles
-   ### Tax and Gas related functions
-    - No redundant call, make sure the functions are optimized for less gas utilization
-    - No Honey pot: Make sure that the token is sellable
-    - Make sure that you can sell and buy tokens
-    - Sell and Buy tax should remain less then 5%
-   ### Top holders
-    - locked / burned token should be > 95%
-    - top 5 to 10 holders should not have more then 5% of circulating supply
-    
-## Thirt Party Audit - Industry Standard
+A practical checklist for an **initial internal security pass** before engaging a third-party auditor. Adapt items to your protocol’s threat model and scope.
+
+## 1. Documentation
+
+Solid documentation is the baseline for any review.
+
+- Business requirements documentation  
+- Technical requirements documentation  
+- Expected behavior versus implemented logic (traceability)  
+- Test cases (automate where possible) and a log of executed tests  
+- Test results from testnets or staging deployments  
+- Version control for requirements and design so code changes stay aligned  
+- Implementation strictly follows the agreed specification  
+
+## 2. Automated and static analysis
+
+- Run suitable auditing / analysis tools (example workflow): [bscheck](https://bscheck.eu/)  
+- Integrate findings with manual review; tools do not replace human judgment  
+
+## 3. Bug and abuse-case testing
+
+- Harmful or unexpected transactions: ordering dependencies, stack limits, arithmetic issues, and related classes in [001 Type of Blockchain Attacks](./001%20Type%20of%20Blockchain%20Attacks.md) and [002 Smart contract attacks](./002%20Smart%20contract%20attacks.md)  
+- Token minting: supply caps, roles, timelocks, and upgrade paths  
+- If **pause** exists: model rug-pull and liveness scenarios (who can pause, for how long, and what user funds are affected)  
+- **Delegatecall**, proxies, and third-party calls: storage layout, implementation upgrades, and trust boundaries  
+- Factory pattern correctness: [Cloning Solidity smart contracts (LogRocket)](https://blog.logrocket.com/cloning-solidity-smart-contracts-factory-pattern/)  
+- **Migrator** patterns: high historical abuse; see [RugDoc on migrators](https://rugdoc.io/education/migrator/)  
+- **Renounce ownership** ([EIP-173](https://eips.ethereum.org/EIPS/eip-173)): intentional, documented, and not masking centralized control elsewhere  
+- No hidden **emergency withdraw** that drains user principal outside stated policy  
+- **Locktime** / vesting where token economics require it  
+- No unexpected **liquidity removal** or admin-only drains from pools users rely on  
+- No opaque **strategy change** functions that reallocate user assets without consent  
+- **Burn** mechanics: not used to hide supply manipulation or block sells  
+- Each function’s behavior matches its name, NatSpec, and external documentation  
+- Input validation under a Byzantine / adversarial model  
+- Dependencies on external contracts, libraries, and **oracles** (staleness, manipulation, fallback behavior)  
+
+## 4. Tax, trading, and gas
+
+- Avoid redundant external calls; optimize hot paths for gas without sacrificing safety  
+- **Honeypot** checks: users can sell under realistic conditions on the target DEX/router  
+- Buy and sell paths both work as advertised  
+- If taxes exist, keep them within your project’s stated bounds (many communities treat ~5% as a rough ceiling for “reasonable” swap taxes—verify against your own policy)  
+
+## 5. Distribution and concentration
+
+- Locked or burned supply aligned with whitepaper (often teams aim for a large majority locked or verifiably burned—tune thresholds to your model)  
+- Top holders: monitor concentration among the largest 5–10 wallets versus circulating supply  
+
+## 6. Third-party audit (industry standard)
+
+After internal review, engage a reputable firm for a **scoped** audit, then track remediation and **re-review** of critical fixes.

@@ -1,6 +1,8 @@
-# Smart contract bugs list
+# Smart contract attacks and vulnerability classes
 
-## Solidity Security Pitfalls, Considerations and Recommendations
+Reference list of common **Solidity / EVM** pitfalls, with links to official docs, research, and write-ups. Pair with [003 Blockchain Best Practices](./003%20Blockchain%20Best%20Practices.md) for defensive design.
+
+## Solidity security pitfalls, considerations and recommendations
 https://docs.soliditylang.org/en/v0.8.0/security-considerations.html
 
 ## Solidity Known Bug List:
@@ -18,7 +20,7 @@ eg: https://hackernoon.com/hack-solidity-reentrancy-attack
 
 
 ## Timestamp Dependence: 
-The timestamp dependency vulnerability exists when a smart contract uses the block timestamp as part of the conditions to perform a critical operation (e.g., sending ether) or as the source of entropy to generate random numbers. In a distributed system like blockchain, the miner has the freedom to set the timestamp of a block within a short time interval less than 900 seconds [24]. However, if a smart contract transfer ether based on timestamp, an attacker can manipulate block timestamps to exploit the vulnerability
+The timestamp dependency vulnerability exists when a smart contract uses the block timestamp as part of the conditions to perform a critical operation (e.g., sending ether) or as the source of entropy to generate random numbers. In a distributed system like blockchain, the miner has the freedom to set the timestamp of a block within a short time interval less than 900 seconds [24]. However, if a smart contract transfers ether based on timestamp, an attacker can manipulate block timestamps to exploit the vulnerability
 
 ## Gas Limit and Loops : 
 Solidity uses Gas to fuel each transaction on the Ethereum network. Each piece of code costs the user some gas to execute their transaction.
@@ -47,14 +49,14 @@ The gasless send vulnerability is due to the fact that when using send the recip
 
 ## Balance equality: 
 The research paper shows that it is possible to send Ethers to contract even if you rejected Ethers in the fallback function of your contract.
-The attacker can execute selfdesctruct on some contract with the address of your contract. This will send ETHs to your contract without invoking the fallback function
-Let's understand this with the help of a contract. In this, the victim contract gas implemented a fallback function to reject ethers, so the developer of Victim contract assumes no one can send ETH to his contract.
+The attacker can execute `selfdestruct` on some contract with the address of your contract. This will send ETH to your contract without invoking the fallback function.
+Let's understand this with the help of a contract. In this, the victim contract has implemented a fallback function to reject ether, so the developer of the victim contract assumes no one can send ETH to the contract.
 But I can write an Attack contract with a selfdestruct function, where I will pass the address of the victim contract. This will allow me to send Ethers to victim contract. The reason being in case of self destruct, fallback function is not executed.
 
 pragma solidity 0.5.1; contract Victim{ function() external payable { revert(); } function getEthBalance() public view returns (uint){ return address(this).balance; } } contract Attack { function pay() public payable { } function getEthBalance() public view returns (uint){ return address(this).balance; } function kill(address payable victim) public { selfdestruct(victim); } }
 
-How greater than or less than preventing the attacker from misusing the Selfdestruct?
-This purely depends on business logic, it means you should never assume that no one can send ETHs to your contract.
+How can greater-than or less-than balance checks prevent misuse of `selfdestruct` funding?
+That depends entirely on business logic: you should **never** assume that no one can force-send ETH to your contract.
 
 
 ## Byte array

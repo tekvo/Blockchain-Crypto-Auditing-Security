@@ -1,3 +1,7 @@
+# Types of blockchain attacks
+
+This note groups common attack surfaces into **network**, **wallet**, **smart contract**, **transaction verification**, and **mining pool** categories. Use it as a map; follow the dedicated smart-contract guide for Solidity-specific classes.
+
 ## 1. Blockchain network attacks
     - Distributed denial of service 
     - Transaction malleability attacks
@@ -18,7 +22,7 @@
     - Attacks on cold wallets
     - Attacks on hot wallets
     
-## 3. [Smart contract attacks](https://github.com/Tekvology/Blockchain-Crypto-Auditing-Security/blob/main/002%20Smart%20contract%20attacks.md)
+## 3. [Smart contract attacks](./002%20Smart%20contract%20attacks.md)
     - Vulnerabilities in contract source code
     - Vulnerabilities in virtual machines
         1. Immutable defects
